@@ -82,8 +82,6 @@ class Light:
         self.light_points = []
         self.add_light_points()
 
-        self.rect = Rect(self.x - 10, self.y - 10, 20, 20)
-
     def add_light_points(self):
 
         self.light_points = []
@@ -132,7 +130,7 @@ class Program:
         self.objects = []
         self.create_level()
 
-        self.light = Light(250, 100, 0, self)
+        self.light = Light(20, 20, 0, self)
 
         self.run = True
 
@@ -185,6 +183,9 @@ class Program:
         pygame.display.set_caption(f"FPS: {int(self.clock.get_fps())}")
 
     def update(self):
+
+        x = self.light.x
+        y = self.light.y
 
         keys = pygame.key.get_pressed()
 
